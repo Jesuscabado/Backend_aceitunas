@@ -28,7 +28,7 @@ let maxId = 1;
 const getAll = async (req, res) => {// esta funcion sirve para devolver todas las aceitunas
     try {
         // falta la parte de los datos de la base de datos
-        res.json(aceitunas);
+        res.render("aceitunas/list",{aceitunas});
     }
     catch (error) {
         res.status(500).json({message: error.message});

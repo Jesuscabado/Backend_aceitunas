@@ -1,7 +1,7 @@
 import {Router} from 'express';
 
 import aceitunasController from '../controllers/aceitunas/aceitunasController.js';
-
+import isAuthenticated from '../middlewares/authMiddleware.js';
 const router = Router();
 
 router.get('/', (req, res) => {//get es un metodo de express
