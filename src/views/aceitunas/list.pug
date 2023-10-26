@@ -5,4 +5,5 @@ block content
     if aceitunas 
         ul 
             each aceituna in aceitunas
-                li= aceituna.tipo +':' +aceituna.peso
+                li
+                    a( class='nav-link' href= `/aceitunas/${aceituna.tipo}`)= aceituna.tipo + ': ' + aceituna.peso 

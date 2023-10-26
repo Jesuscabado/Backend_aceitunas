@@ -1,15 +1,15 @@
 html 
     head 
+        link(rel='stylesheet' , href='/css/style.css') 
         title LMLA 
-        link(rel='stylesheet' , href='/css/style.css')
     body 
-        nav 
-            a(href='/') Home
-            br
-            a(href='/aceitunas') tipos de aceitunas 
-            br
-            a(href='/login') Login
+        nav
+            a(href='/' class='nav-link') Home
+            a(href='/aceitunas' class='nav-link') Tipos de aceitunas
+            a(href='/login' class='nav-link') Login
         block content
 
         script(type="module", src="/js/layout.js")
         block script
+
+        
