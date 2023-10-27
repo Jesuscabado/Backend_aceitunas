@@ -62,7 +62,6 @@ ul {
     color: #d7f1e0; /* Cambia el color del texto */
     font-weight: bold; /* Aplica un peso de fuente en negrita */
     margin-left: 100px 100px; /* Establece la separación entre enlaces */
-    display:inline; /* Para que los enlaces aparezcan en la misma línea */
     background-color: #2d6a4f;/*color de fondo*/
     position: relative;
   }

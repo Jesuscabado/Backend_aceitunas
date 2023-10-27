@@ -2,8 +2,10 @@ extends ../layout
 
 block content
     h1 Lista de tipos de aceitunas
-    if aceitunas 
-        ul 
-            each aceituna in aceitunas
-                li
-                    a( class='nav-link' href= `/aceitunas/${aceituna.tipo}`)= aceituna.tipo + ': ' + aceituna.peso 
+    if error 
+        h2 no se han podido encontrar los datos
+    else if aceitunas 
+            ul 
+                each aceituna in aceitunas
+                    li
+                        a( class='nav-link' href= `/aceitunas/${aceituna.tipo}`)= aceituna.tipo + ': ' + aceituna.peso 

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content 
+    h1 Editar tipo de aceituna
+    if error 
+        h2= error
+    form(action=`/aceitunas/${aceituna.id}`, method="POST") 
+        label(for='tipo') Tipo
+        input(type='text' name='tipo' id='tipo' value=aceituna.tipo)
+        label(for='peso') Peso
+        input(type='number' name='peso' id='peso' value=aceituna.peso)
+        input(type='hidden' name='id' id='id' value=aceituna._id)
+        input(type='submit' value='Editar')

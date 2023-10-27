@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const isAuthenticated = (req, res, next) => {//creamos una funcion que se encargara de verificar si el token es valido
+/* const isAuthenticated = (req, res, next) => {//creamos una funcion que se encargara de verificar si el token es valido
     const token = req.query.token;
     try{
         const decoded = jwt.verify(token, process.env.JSON_SECRET);
@@ -10,6 +10,16 @@ const isAuthenticated = (req, res, next) => {//creamos una funcion que se encarg
     }
     catch(e){
         res.status(401).send({error: 'Token inválido'});
+    }
+} */
+
+const isAuthenticated = (req, res, next) => {//creamos una funcion que se encargara de verificar si el token es valido
+    if(req.session.user){
+        console.log("sesion",req.session);
+        next();
+    }
+    else{
+        res.redirect('/login');
     }
 }
 

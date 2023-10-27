@@ -1,5 +1,6 @@
 import express from 'express';//importamos express 
 import dotenv from 'dotenv';//importamos dotenv para poder usar el metodo config
+import session from 'express-session';//importamos express-session para poder usar el metodo session
 
 import router from './routes/router.js';//importamos el archivo router.js que esta en la carpeta routes
 
@@ -7,6 +8,15 @@ dotenv.config();//configuramos dotenv para que pueda leer el archivo .env
 const app = express();//creamos una constante app que sera igual a express
 
 app.use(express.static('./public'));//usamos el metodo use de express para que use la carpeta public
+app.use(session ({
+    secret: process.env.SESSION_SECRET,
+    resave: false,//hace que la sesion no se guarde hasta que se modifique
+    saveUninitialized: false,//hace que la sesion no se guarde hasta que se inicialice
+    cookie: {
+      secure: false,
+    maxAge: 1000*60*20
+  }//
+}));
 
 app.set('views', './src/views');//usamos el metodo set de express para que use la carpeta views
 app.set('view engine', 'pug');//usamos el metodo set de express para que use el motor de plantillas pug
